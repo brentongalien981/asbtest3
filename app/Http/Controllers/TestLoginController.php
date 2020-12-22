@@ -7,6 +7,21 @@ use Laravel\Socialite\Facades\Socialite;
 
 class TestLoginController extends Controller
 {
+    public function redirectToFacebookProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+
+    public function handleFacebookProviderCallback()
+    {
+        $user = Socialite::driver('facebook')->user();
+
+        return [
+            'user' => $user,
+        ];
+    }
+
     public function puta() {
         return [
             'msg' => 'are you fucking kiddin me'
@@ -18,11 +33,7 @@ class TestLoginController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function handleProviderCallback()
     {
         $user = Socialite::driver('google')->user();

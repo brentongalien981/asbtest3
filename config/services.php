@@ -37,4 +37,10 @@ return [
         'redirect' => 'http://asbdev.com/receive-socialite-auth-code',
     ],
 
+    'facebook' => [
+        'client_id' => env('FACEBOOK_APP_ID'),
+        'client_secret' => env('FACEBOOK_APP_SECRET'),
+        'redirect' => 'http://asbdev.com/facebook/receive-socialite-auth-code',
+    ],
+
 ];
