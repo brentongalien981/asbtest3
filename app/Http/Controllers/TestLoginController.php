@@ -7,6 +7,12 @@ use Laravel\Socialite\Facades\Socialite;
 
 class TestLoginController extends Controller
 {
+    public function puta() {
+        return [
+            'msg' => 'are you fucking kiddin me'
+        ];
+    }
+
     public function redirectToProvider()
     {
         return Socialite::driver('google')->redirect();
