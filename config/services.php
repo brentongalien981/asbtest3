@@ -34,7 +34,7 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'https://asbdev.com/receive-socialite-auth-code',
+        'redirect' => 'http://asbdev.com/receive-socialite-auth-code',
     ],
 
 ];
