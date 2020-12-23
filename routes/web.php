@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\TestLoginController;
 
 /*
@@ -26,7 +27,8 @@ Route::get('/puta', [TestLoginController::class, 'puta']);
 
 
 Route::get('/redirect-to-simple-app', function () {
-    return redirect('localhost:3000');
+    // return redirect('localhost:3000');
+    return Redirect::to('localhost:3000');
 });
 
 
