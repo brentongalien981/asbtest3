@@ -25,6 +25,10 @@ Route::get('/puta', [TestLoginController::class, 'puta']);
 // Route::get('/receive-socialite-auth-code', 'TestLoginController@handleProviderCallback');
 
 
+Route::get('/redirect-to-simple-app', function () {
+    return redirect('localhost:3000');
+});
+
 
 Route::get('/fuck', function () {
     return "hello fucker";
