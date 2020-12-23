@@ -28,7 +28,7 @@ Route::get('/puta', [TestLoginController::class, 'puta']);
 
 Route::get('/redirect-to-simple-app', function () {
     // return redirect('localhost:3000');
-    return Redirect::to('http://localhost:3000');
+    return Redirect::to('http://localhost:3000?the-token=abc39x');
 });
 
 
