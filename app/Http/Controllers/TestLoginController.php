@@ -40,6 +40,9 @@ class TestLoginController extends Controller
 
         return [
             'user' => $user,
+            'userId' => $user->id,
+            'token' => $user->token,
+            'expiresIn' => $user->expiresIn,
             '$user->token' => $user->token
         ];
     }
