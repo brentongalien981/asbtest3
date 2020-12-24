@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Route::get('/getUserInfo', [TestLoginController::class, 'getUserInfo']);
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
