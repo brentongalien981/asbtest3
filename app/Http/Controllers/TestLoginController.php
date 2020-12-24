@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
 
 class TestLoginController extends Controller
@@ -38,12 +39,16 @@ class TestLoginController extends Controller
     {
         $user = Socialite::driver('google')->user();
 
-        return [
-            'user' => $user,
-            'userId' => $user->id,
-            'token' => $user->token,
-            'expiresIn' => $user->expiresIn,
-            '$user->token' => $user->token
-        ];
+        $url = "https://yongestreetproject.com/receive-access-token?token=" . $user->token;
+
+        return Redirect::to($url);
+
+        // return [
+        //     'user' => $user,
+        //     'userId' => $user->id,
+        //     'token' => $user->token,
+        //     'expiresIn' => $user->expiresIn,
+        //     '$user->token' => $user->token
+        // ];
     }
 }
