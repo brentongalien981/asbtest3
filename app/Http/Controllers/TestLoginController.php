@@ -57,7 +57,7 @@ class TestLoginController extends Controller
     public function getUserInfo(Request $request)
     {
 
-        $user = Socialite::driver('goggle')->userFromToken($request->token);
+        $user = Socialite::driver('google')->userFromToken($request->token);
 
         return [
             'objs' => [
