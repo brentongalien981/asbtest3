@@ -54,6 +54,24 @@ class TestLoginController extends Controller
 
 
 
+    public function getSampleUserInfo(Request $request)
+    {
+        $actualToken = "ya29.a0AfH6SMCW5aC182DYCU8kUNDUN3hF3bOLjEJL3l-KEA0HwPBB8D9UUILNeAPYHOlDijM4RPhWlm1EpDBkzOkhMcXPL6C6vPxlRTyuf_Eeq1jFSdPmw-Yvm7D7447K-ezC9OQtPX2Psp8n54c4PfDPqwMSzn7HGm5ey0WgDFajKlsD";
+
+        $user = Socialite::driver('google')->userFromToken($actualToken);
+
+        return [
+            'objs' => [
+                'user' => $user,
+                'userId' => $user->id,
+                'expiresIn' => $user->expiresIn
+            ]
+        ];
+
+    }
+
+
+
     public function getUserInfo(Request $request)
     {
 
